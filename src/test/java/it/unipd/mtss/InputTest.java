@@ -63,6 +63,11 @@ public class InputTest {
     }
 
     @Test
+    public void IntegerToRoman_1000_to_M() {
+        assert(IntegerToRoman.convert(1000).equals("M"));
+    }
+
+    @Test
     public void RomanPrinter_I() {     
         String IArt = " _____ \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|\n";
         assertEquals(RomanPrinter.print(1),(IArt));
@@ -99,6 +104,12 @@ public class InputTest {
     }
 
     @Test
+    public void RomanPrinter_M() {
+        String MArt = " __  __ \n|  \\/  |\n| \\  / |\n| |\\/| |\n| |  | |\n|_|  |_|\n";
+        assertEquals(RomanPrinter.print(1000),(MArt));
+    }
+
+    @Test
     public void TestConvertZero() {
         assert(IntegerToRoman.convert(0).equals("0"));
     }
@@ -106,6 +117,11 @@ public class InputTest {
     @Test
     public void TestPrintZero() {
         assert(RomanPrinter.print(0).equals(""));
+    }
+
+    @Test
+    public void TestNumber() {
+        assert(IntegerToRoman.convert(1234).equals("MCCXXXIV"));
     }
 
     @Test
@@ -121,6 +137,11 @@ public class InputTest {
     @Test
     public void TestSwitchCase() {
         assert(RomanPrinter.print(-1234).equals("Invalid Roman Number Value"));
+    }
+
+    @Test
+    public void NumberIsOver10000Print() {
+        assert(RomanPrinter.print(10001).equals("Invalid Roman Number Value"));
     }
 
 }
