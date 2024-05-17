@@ -51,11 +51,26 @@ public class RomanPrinter {
                       "| | | |",
                       "| |_| |",
                       "|____/ "};
+
+        String[] M = {" __  __ ",
+                      "|  \\/  |",
+                      "| \\  / |",
+                      "| |\\/| |",
+                      "| |  | |",
+                      "|_|  |_|"};
         
         String[] tmp_result = {"","","","","","",""};
 
         for(int i=0;i<romanNumber.length();i++){
             switch(romanNumber.substring(i,i+1)){
+                case "M":
+                    tmp_result[0] += M[0];
+                    tmp_result[1] += M[1];
+                    tmp_result[2] += M[2];
+                    tmp_result[3] += M[3];
+                    tmp_result[4] += M[4];
+                    tmp_result[5] += M[5];
+                    break;
                 case "D":
                     tmp_result[0] += D[0];
                     tmp_result[1] += D[1];
