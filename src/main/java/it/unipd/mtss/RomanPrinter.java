@@ -8,7 +8,12 @@ public class RomanPrinter {
     public static String print(int num){
         return printAsciiArt(IntegerToRoman.convert(num));
     }
+    
     private static String printAsciiArt(String romanNumber){
+        if(romanNumber.equals("Invalid Roman Number Value")){
+            return "Invalid Roman Number Value";
+        }
+
         String[] I = {" _____ ",
                       "|_   _|",
                       "  | |  ",
@@ -21,11 +26,26 @@ public class RomanPrinter {
                       "  \\ \\/ /  ",
                       "   \\  /   ",
                       "    \\/    "};
+        
+        String[] X = {"__  __",
+                      "\\ \\/ /",
+                      " \\  / ",
+                       "  ><  ",
+                      " /  \\ ",
+                      "/_/\\_\\"};              
 
         String[] tmp_result = {"","","","","","",""};
 
         for(int i=0;i<romanNumber.length();i++){
             switch(romanNumber.substring(i,i+1)){
+                case "X":
+                    tmp_result[0] += X[0];
+                    tmp_result[1] += X[1];
+                    tmp_result[2] += X[2];
+                    tmp_result[3] += X[3];
+                    tmp_result[4] += X[4];
+                    tmp_result[5] += X[5];
+                    break;
                 case "V":
                     tmp_result[0] += V[0];
                     tmp_result[1] += V[1];
