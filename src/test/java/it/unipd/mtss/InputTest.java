@@ -43,6 +43,11 @@ public class InputTest {
     }
 
     @Test
+    public void IntegerToRoman_10_to_X() {
+        assert(IntegerToRoman.convert(10).equals("X"));
+    }
+
+    @Test
     public void RomanPrinter_I() {     
         String IArt = " _____ \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|\n";
         assertEquals(RomanPrinter.print(1),(IArt));
@@ -55,8 +60,14 @@ public class InputTest {
     }
 
     @Test
-    public void TestEmptyString() {
-        assert(IntegerToRoman.convert(0).equals(""));
+    public void RomanPrinter_X() {
+        String XArt = "__  __\n\\ \\/ /\n \\  / \n  ><  \n /  \\ \n/_/\\_\\\n";
+        assertEquals(RomanPrinter.print(10),(XArt));
+    }
+
+    @Test
+    public void TestZero() {
+        assert(IntegerToRoman.convert(0).equals("0"));
     }
 
     @Test
@@ -67,6 +78,11 @@ public class InputTest {
     @Test
     public void TestNumberNegative() {
         assert(IntegerToRoman.convert(-1234).equals("Invalid Roman Number Value"));
+    }
+
+    @Test
+    public void TestSwitchCase() {
+        assert(RomanPrinter.print(-1234).equals("Invalid Roman Number Value"));
     }
 
 }

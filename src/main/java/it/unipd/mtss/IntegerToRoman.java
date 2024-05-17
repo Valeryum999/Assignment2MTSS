@@ -9,8 +9,11 @@ public class IntegerToRoman {
         if(number < 0 || number > 10000){
             return "Invalid Roman Number Value";
         }
-        int[] values = {5,4,1};  
-        String[] romanLetters = {"V","IV","I"};  
+        if(number == 0){
+            return "0";
+        }
+        int[] values = {10,9,5,4,1};  
+        String[] romanLetters = {"X","IX","V","IV","I"};  
         String result = "";
         for(int i=0;i<values.length;i++){  
             while(number >= values[i]){  
