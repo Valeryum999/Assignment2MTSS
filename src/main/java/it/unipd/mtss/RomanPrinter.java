@@ -15,12 +15,25 @@ public class RomanPrinter {
                       "  | |  ",
                       " _| |_ ",
                       "|_____|"};
-        
+        String[] V = {"__      __",
+                      "\\ \\    / /",
+                      " \\ \\  / / ",
+                      "  \\ \\/ /  ",
+                      "   \\  /   ",
+                      "    \\/    "};
 
         String[] tmp_result = {"","","","","","",""};
 
         for(int i=0;i<romanNumber.length();i++){
             switch(romanNumber.substring(i,i+1)){
+                case "V":
+                    tmp_result[0] += V[0];
+                    tmp_result[1] += V[1];
+                    tmp_result[2] += V[2];
+                    tmp_result[3] += V[3];
+                    tmp_result[4] += V[4];
+                    tmp_result[5] += V[5];
+                    break;
                 case "I":
                     tmp_result[0] += I[0];
                     tmp_result[1] += I[1];
