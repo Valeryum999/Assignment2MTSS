@@ -58,6 +58,11 @@ public class InputTest {
     }
 
     @Test
+    public void IntegerToRoman_500_to_D() {
+        assert(IntegerToRoman.convert(500).equals("D"));
+    }
+
+    @Test
     public void RomanPrinter_I() {     
         String IArt = " _____ \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|\n";
         assertEquals(RomanPrinter.print(1),(IArt));
@@ -88,8 +93,19 @@ public class InputTest {
     }
 
     @Test
-    public void TestZero() {
+    public void RomanPrinter_D() {
+        String DArt = " ____  \n|  _ \\ \n| | | |\n| | | |\n| |_| |\n|____/ \n";
+        assertEquals(RomanPrinter.print(500),(DArt));
+    }
+
+    @Test
+    public void TestConvertZero() {
         assert(IntegerToRoman.convert(0).equals("0"));
+    }
+
+    @Test
+    public void TestPrintZero() {
+        assert(RomanPrinter.print(0).equals(""));
     }
 
     @Test
